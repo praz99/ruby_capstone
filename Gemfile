@@ -1,0 +1,3 @@
+Nokogiri
+HTTparty
+Pry
