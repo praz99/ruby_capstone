@@ -22,7 +22,6 @@ describe Validator do
     end
   end
 
-
   describe '#try_again?' do
     it "returns true if given input is either 'y' or 'n'" do
       expect(validator.try_again?('y')).to eql(true)
