@@ -21,4 +21,15 @@ describe Validator do
       expect(validator.choice_valid?(220)).to eql(false)
     end
   end
+
+
+  describe '#try_again?' do
+    it "returns true if given input is either 'y' or 'n'" do
+      expect(validator.try_again?('y')).to eql(true)
+    end
+
+    it "returns true if given input is other than 'y' or 'n'" do
+      expect(validator.choice_valid?('k')).to eql(false)
+    end
+  end
 end
