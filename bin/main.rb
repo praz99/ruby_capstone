@@ -8,7 +8,7 @@ require_relative '../lib/search.rb'
 validate = Validator.new
 search = Search.new
 
-puts "---WELCOME---\n"
+puts "\t\t\t-----WELCOME-----\n"
 puts "Here you can find the details of coronavirus COVID-19 cases of a country, territory, or conveyance.\n\n"
 puts "Search by entering a COUNTRY NAME or POSITION or see the list for whole world.\n\n"
 
@@ -28,20 +28,34 @@ while program
     choice = gets.chomp
   end
   case choice
-  when '1'
+  when '1'    
     country = ''
-    until country.nil?
+    while country.empty?
       print 'Please enter the country name you want to search: '
       country = gets.chomp.capitalize
     end
     value = search.search_name(country)
-    show_data(value)
+    if value.class == String
+      puts "\n\nCountry not found. Please make sure you entered the country name correctly."
+    else
+      show_data(value)
+    end
   when '2'
-    print 'Please enter the position you want to find a country about [1-215]: '
-    position = gets.chomp.to_i
-    value = search.search_position(position)
-    # puts value
-    show_data(value)
+    position = ''
+    while position.empty?
+      print 'Please enter the position you want to find a country about [1-215]: '
+      position = gets.chomp
+    end
+    until validate.position_valid?(position)
+      puts 'Please enter between 1 and 215 only.'
+      position = gets.chomp
+    end
+    value = search.search_position(position.to_i)
+    if value.empty?
+      puts "\n\nCountry not found. Please make sure you entered number between 1 and 215."
+    else
+      show_data(value)
+    end
   when '3'
     print 'Showing the details about COVID-19 infections for all countries and territories in world:'
     value = search.show_all

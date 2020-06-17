@@ -18,6 +18,10 @@ class Search < Scraper
     scrape.each do |item|
       temp = item[:position] if item[:country] == name
     end
-    scrape[temp.to_i - 1]
+    if temp.empty?
+      return "\n\nCountry not found. Please make sure you entered the country name correctly."
+    else
+      scrape[temp.to_i - 1]
+    end
   end
 end
