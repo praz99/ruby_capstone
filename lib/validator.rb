@@ -1,9 +1,13 @@
 class Validator
   def choice_valid?(choice)
-    choice.between?('1', '3') ? true : false
+    choice.eql?('1') || choice.eql?('2') || choice.eql?('3') ? true : false
   end
 
   def position_valid?(position)
-    position.between?('1', '215') ? true : false
+    position.to_i.between?(1, 215) ? true : false
+  end
+
+  def try_again?(input)
+    input.eql?('y') || input.eql?('n') ? true : false
   end
 end

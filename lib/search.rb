@@ -6,7 +6,7 @@ class Search < Scraper
   end
 
   def search_position(pos)
-    result = ''    
+    result = ''
     scrape.each do |item|
       result = scrape[pos - 1] if item[:position] == pos.to_s
     end
@@ -19,7 +19,7 @@ class Search < Scraper
       temp = item[:position] if item[:country] == name
     end
     if temp.empty?
-      return "\n\nCountry not found. Please make sure you entered the country name correctly."
+      "\n\nCountry not found. Please make sure you entered the country name correctly."
     else
       scrape[temp.to_i - 1]
     end
