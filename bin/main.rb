@@ -10,9 +10,10 @@ search = Search.new
 
 puts "\t\t\t-----WELCOME-----\n"
 puts "Here you can find the details of coronavirus COVID-19 cases of a country, territory, or conveyance.\n\n"
-puts "Search by entering a COUNTRY NAME or POSITION or see the list for whole world.\n\n"
+puts "Search by entering a COUNTRY NAME or POSITION or see the list for WHOLE WORLD.\n\n"
 
 def show_data(input)
+  puts "\n"
   input.each do |key, val|
     puts "#{key}: #{val}"
   end
@@ -24,11 +25,11 @@ while program
     puts 'Please enter'
     puts "\t1 for search by COUNTRY NAME."
     puts "\t2 for search by POSITION."
-    puts "\t3 to list of WHOLE WORLD."
+    puts "\t3 for list of WHOLE WORLD."
     choice = gets.chomp
   end
   case choice
-  when '1'    
+  when '1'
     country = ''
     while country.empty?
       print 'Please enter the country name you want to search: '
@@ -62,7 +63,18 @@ while program
     value.each do |mini|
       puts "\n"
       show_data(mini)
-    end    
+    end
   end
-  program = false
+
+  print 'Do you want to continue? (Y/N): '
+  yes_no = gets.chomp.downcase
+  until validate.try_again?(yes_no)
+    print 'Y/N?: '
+    yes_no = gets.chomp.downcase
+  end
+
+  program = yes_no == 'y'
+  system 'clear' if program
 end
+
+puts "\n\n\t\t\t...THANK YOU..."
