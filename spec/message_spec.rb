@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/LineLength
+# rubocop:disable Layout/LineLength
 
 require_relative '../lib/message.rb'
 
@@ -53,4 +53,4 @@ describe Message do
     end
   end
 end
-# rubocop:enable Metrics/LineLength
+# rubocop:enable Layout/LineLength

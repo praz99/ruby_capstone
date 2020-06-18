@@ -52,8 +52,7 @@ while program
     show_data(value)
   when '3'
     print message.all_country
-    value = search.show_all
-    value.each do |mini|
+    search.show_all.each do |mini|
       puts "\n"
       show_data(mini)
     end
