@@ -43,6 +43,7 @@
 - [About The Project](#about-the-project)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
+- [Testing](#testing)
 - [Built With](#built-with)
 - [Contributing](#contributing)
 - [Author](#author)
@@ -75,9 +76,15 @@ Or just hit (Download Zip) on green button (Clone or Download) on top of this pa
 
 * Ruby Language - Version 2.5.5. or higher - [Install guide](https://www.ruby-lang.org/en/documentation/installation/)
 
-* Nokogiri gem - Version 1.10.9. or higher - [Install guide](https://nokogiri.org/tutorials/installing_nokogiri.html)
 
-* HTTParty gem - Version 0.13.7. or higher - [Install guide](https://rubygems.org/gems/httparty/versions/0.13.7)
+Install required gems by navigating to the project directory and enter command
+```js
+bundle install
+```
+
+<!-- * Nokogiri gem - Version 1.10.9. or higher - [Install guide](https://nokogiri.org/tutorials/installing_nokogiri.html)
+
+* HTTParty gem - Version 0.13.7. or higher - [Install guide](https://rubygems.org/gems/httparty/versions/0.13.7) -->
 
 
 
@@ -94,6 +101,15 @@ For linux:
 ```js
 bin/main.rb
 ```
+### Testing
+
+To test the project
+
+- Navigate to the directory where the project is located.
+- Open terminal in this directory.
+- Install RSpec by using `gem install rspec` command.
+- Start testing by using `rspec` command.
+
 ### Built With
 This project was built using these technologies.
 
