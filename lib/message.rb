@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/LineLength
+
 class Message
   def welcome
     "\t\t\t-----WELCOME-----\n\nHere you can find the details of coronavirus COVID-19 cases of a country, territory, or conveyance.\n\nSearch by entering a COUNTRY NAME or POSITION or see the list for WHOLE WORLD.\n\n"
@@ -31,3 +33,4 @@ class Message
     "\n\n\t\t\t...THANK YOU..."
   end
 end
+# rubocop:enable Metrics/LineLength
